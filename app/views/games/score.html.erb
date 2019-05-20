@@ -1,0 +1,12 @@
+<h1>RESULT</h1>
+<% @word.split('').each do |letter| %>
+  <% unless @letters.include? letter %>
+    <% @message = "Sorry butt #{@word} can't be built out of #{@letters}" %>
+    <% @points = 0 %>
+  <% end %>
+<% end %>
+
+<p><%= @message %></p>
+<p><%= @points %></p>
+
+<%= link_to "Hit me baby one more time!", "/new" %>
