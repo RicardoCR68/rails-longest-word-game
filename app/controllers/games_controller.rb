@@ -13,8 +13,8 @@ class GamesController < ApplicationController
     @points = @word.length
 
     url = "https://wagon-dictionary.herokuapp.com/#{@word}"
-    word_validity = JSON.parse(open(url).read)
-    unless word_validity['found']
+    pee = JSON.parse(open(url).read)
+    unless pee['found']
       @message = "Sorry but #{@word} is not an english word"
       @points = 0
     end
